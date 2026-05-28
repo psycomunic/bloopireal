@@ -1,0 +1,12 @@
+{
+  "name": "bloopi-frontend",
+  "version": "1.0.0",
+  "description": "Bloopi frontend HTML/CSS puro",
+  "scripts": {
+    "dev": "vite",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}
