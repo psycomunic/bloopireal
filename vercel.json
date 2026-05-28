@@ -4,5 +4,19 @@
       "source": "/assets/:match*",
       "destination": "https://www.bloopi.io/assets/:match*"
     }
+  ],
+  "headers": [
+    {
+      "source": "/assets/logo-bluen-blue-CCittD31.svg",
+      "headers": [
+        { "key": "Content-Type", "value": "image/png" }
+      ]
+    },
+    {
+      "source": "/assets/logo-bluen-white-Bf3UH5JC.svg",
+      "headers": [
+        { "key": "Content-Type", "value": "image/png" }
+      ]
+    }
   ]
 }

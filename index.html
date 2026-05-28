@@ -15,17 +15,57 @@
     <link rel="preconnect" href="https://js.stripe.com" />
     <link rel="preconnect" href="https://ohyufpkpmszytnombtay.supabase.co" />
     <link rel="dns-prefetch" href="https://api.qrserver.com" />
-    <title>Bluen, seu gateway de pagamento completo.</title>
-    <meta name="description" content="Bluen, seu gateway de pagamento completo.">
     
-  <script type="module" crossorigin src="/assets/index-hMw7xmWY.js"></script>
-  <link rel="modulepreload" crossorigin href="/assets/vendor-react-D_xWsbul.js">
-  <link rel="modulepreload" crossorigin href="/assets/vendor-supabase-SRSXtynz.js">
-  <link rel="modulepreload" crossorigin href="/assets/vendor-ui-CoMzek20.js">
-  <link rel="modulepreload" crossorigin href="/assets/vendor-query-DcDdcPft.js">
-  <link rel="modulepreload" crossorigin href="/assets/vendor-stripe-DrYTZF0e.js">
-  
-  <link rel="stylesheet" crossorigin href="/assets/index-BBA3qEqj.css">
+    <title>Bloopi, seu gateway de pagamento completo.</title>
+    <meta name="description" content="Bloopi, seu gateway de pagamento completo.">
+    <meta property="og:title" content="Bloopi, seu gateway de pagamento completo.">
+    <meta name="twitter:title" content="Bloopi, seu gateway de pagamento completo.">
+    <meta property="og:description" content="Bloopi, seu gateway de pagamento completo.">
+    <meta name="twitter:description" content="Bloopi, seu gateway de pagamento completo.">
+
+    <script type="module" crossorigin src="/assets/index-hMw7xmWY.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/vendor-react-D_xWsbul.js">
+    <link rel="modulepreload" crossorigin href="/assets/vendor-supabase-SRSXtynz.js">
+    <link rel="modulepreload" crossorigin href="/assets/vendor-ui-CoMzek20.js">
+    <link rel="modulepreload" crossorigin href="/assets/vendor-query-DcDdcPft.js">
+    <link rel="modulepreload" crossorigin href="/assets/vendor-stripe-DrYTZF0e.js">
+    
+    <link rel="stylesheet" crossorigin href="/assets/index-BBA3qEqj.css">
+
+    <script>
+      // Script para substituir o nome Bluen por Bloopi dinamicamente
+      document.addEventListener("DOMContentLoaded", () => {
+        function replaceText(node) {
+          if (node.nodeType === Node.TEXT_NODE) {
+            if (node.parentElement && node.parentElement.tagName !== 'SCRIPT' && node.parentElement.tagName !== 'STYLE') {
+              if (node.nodeValue.includes('Bluen')) {
+                node.nodeValue = node.nodeValue.replace(/Bluen/g, 'Bloopi');
+              }
+              if (node.nodeValue.includes('bluen')) {
+                node.nodeValue = node.nodeValue.replace(/bluen/g, 'bloopi');
+              }
+            }
+          } else if (node.nodeType === Node.ELEMENT_NODE) {
+            for (let child of node.childNodes) {
+              replaceText(child);
+            }
+          }
+        }
+
+        const observer = new MutationObserver((mutations) => {
+          mutations.forEach((mutation) => {
+            if (mutation.type === 'childList') {
+              mutation.addedNodes.forEach((node) => {
+                replaceText(node);
+              });
+            }
+          });
+        });
+        
+        observer.observe(document.body, { childList: true, subtree: true });
+        replaceText(document.body);
+      });
+    </script>
 </head>
 
   <body>
