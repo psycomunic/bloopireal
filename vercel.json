@@ -4,6 +4,10 @@
   "outputDirectory": ".",
   "rewrites": [
     {
+      "source": "/landing/payment-logos/:match*",
+      "destination": "/assets/:match*"
+    },
+    {
       "source": "/assets/:match*",
       "destination": "https://www.bloopi.io/assets/:match*"
     }
