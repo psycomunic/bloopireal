@@ -2,16 +2,7 @@
   "framework": null,
   "buildCommand": null,
   "outputDirectory": ".",
-  "rewrites": [
-    {
-      "source": "/videos/:match*",
-      "destination": "https://www.bloopi.io/videos/:match*"
-    },
-    {
-      "source": "/assets/:match*",
-      "destination": "https://www.bloopi.io/assets/:match*"
-    }
-  ],
+  "rewrites": [],
   "headers": [
     {
       "source": "/assets/logo-bluen-blue-CCittD31.svg",
