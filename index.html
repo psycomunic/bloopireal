@@ -64,6 +64,20 @@
         
         observer.observe(document.body, { childList: true, subtree: true });
         replaceText(document.body);
+
+        // Observer para corrigir o title da aba (que é injetado dinamicamente pelo JS)
+        const titleObserver = new MutationObserver(() => {
+          if (document.title.includes('Bluen')) {
+            document.title = document.title.replace(/Bluen/g, 'Bloopi');
+          }
+          if (document.title.includes('bluen')) {
+            document.title = document.title.replace(/bluen/g, 'bloopi');
+          }
+        });
+        const headNode = document.querySelector('head');
+        if (headNode) {
+          titleObserver.observe(headNode, { childList: true, subtree: true, characterData: true });
+        }
       });
     </script>
 </head>
